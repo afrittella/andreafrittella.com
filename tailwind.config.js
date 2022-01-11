@@ -1,8 +1,16 @@
 module.exports = {
   mode: 'jit',
-  content: ['./src/**/*.{ts,tsx}'],
+  content: ['./src/**/*.{ts,tsx,css}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Orbitron: ['Orbitron', 'sans-serif'],
+        Oxanium: ['Oxanium', 'cursive'],
+      },
+      screens: {
+        'land': {raw: '(max-height: 800px)'},
+      }
+    },
   },
   plugins: [],
 }
