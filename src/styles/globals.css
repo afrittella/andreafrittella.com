@@ -12,4 +12,16 @@
     body > div {
         @apply w-screen h-screen land:h-full land:pt-5;
     }
+
+    .typo-title {
+        @apply font-Orbitron font-bold;
+    }
+
+    .typo-default {
+        @apply font-Oxanium;
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-[#CA3CCD] via-[#4CE6F0] to-[#0AFF95];
+    }
 }

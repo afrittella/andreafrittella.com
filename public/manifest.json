@@ -1,0 +1,34 @@
+{
+  "name": "Andrea Frittella",
+  "short_name": "AnFri",
+  "display": "standalone",
+  "start_url": ".",
+  "background_color": "#000000",
+  "icons": [
+    {
+      "src": "/icons/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/icons/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/icons/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/icons/favicon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/icons/favicon-196x196.png",
+      "type": "image/png",
+      "sizes": "196x196"
+    }
+  ]
+}
