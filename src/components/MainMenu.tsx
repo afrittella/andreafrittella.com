@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 const MainMenuItem = ({ label = '', url = '#', active = false }) => (
-  <Link href={url}>
+  <Link href={url} passHref={true}>
     <div className='flex flex-col cursor-pointer items-center'>
       <div className='w-full'>
         <a

@@ -17,7 +17,12 @@ const getImage = (page: Props['page']) => {
 }
 
 const BackgroundPhoto = ({ page = 'home' }: Props) => (
-  <Image src={getImage(page)} layout='intrinsic' alt='AndreaFrittella.com' placeholder='blur' />
+  <Image
+    src={getImage(page)}
+    layout='intrinsic'
+    alt='AndreaFrittella.com'
+    placeholder='blur'
+  />
 )
 
 export { BackgroundPhoto }

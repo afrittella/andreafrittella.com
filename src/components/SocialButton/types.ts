@@ -6,8 +6,8 @@ export enum CATEGORY {
 }
 
 export type Icon = {
-  category: CATEGORY,
-  service: SERVICE,
-  url: string,
-  label: string,
+  category: CATEGORY
+  service: SERVICE
+  url: string
+  label: string
 }

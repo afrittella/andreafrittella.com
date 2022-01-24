@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { Logo } from 'components/Logo'
 import { MainMenu } from 'components/MainMenu'
-import { BackgroundPhoto } from 'components/BackgroundPhoto'
 import React from 'react'
 
 type Props = {
@@ -36,9 +35,7 @@ const Layout: React.FC<Props> = ({
             <MainMenu activePage={activePage} />
           </div>
         </div>
-        <div className='pt-8 mt-2 w-full sm:px-0 sm:w-10/12'>
-          {children}
-        </div>
+        <div className='pt-8 mt-2 w-full sm:px-0 sm:w-10/12'>{children}</div>
       </main>
     </div>
   )

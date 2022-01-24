@@ -14,7 +14,7 @@ type Props = {
   service: SERVICE
 }
 
-export const getIcon = (service: SERVICE): any => {
+export const getIcon = (service: SERVICE): string => {
   switch (service) {
     case SERVICE.BEATPORT:
       return beatport
@@ -33,12 +33,17 @@ export const getIcon = (service: SERVICE): any => {
   }
 }
 
-export const SocialIcon = ({ service }: Props) => {
+const SocialIcon = ({ service }: Props) => {
   return (
     <div className='max-w-[48px] lg:max-w-[64px]'>
-      <Image src={getIcon(service)} width={'100%'} height={'100%'} />
+      <Image
+        src={getIcon(service)}
+        width={'100%'}
+        height={'100%'}
+        alt={service}
+      />
     </div>
   )
 }
 
-export default { SocialIcon }
+export { SocialIcon }
