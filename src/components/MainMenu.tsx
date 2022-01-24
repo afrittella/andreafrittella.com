@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
 const MainMenuItem = ({ label = '', url = '#', active = false }) => (
-  <Link href={url} passHref={true}>
-    <div className='flex flex-col cursor-pointer items-center'>
-      <div className='w-full'>
+  <div className='flex flex-col items-center'>
+    <div className='w-full'>
+      <Link href={url} passHref={true}>
         <a
           className={`transition-color ease-in-out duration-300 ${
             active ? 'text-white' : ''
@@ -11,14 +11,14 @@ const MainMenuItem = ({ label = '', url = '#', active = false }) => (
         >
           {label}
         </a>
-      </div>
-      <div
-        className={`${
-          !active ? 'invisible' : ''
-        } bg-white block text-center w-[10px] h-[10px] rounded-full mx-30`}
-      />
+      </Link>
     </div>
-  </Link>
+    <div
+      className={`${
+        !active ? 'invisible' : ''
+      } bg-white block text-center w-[10px] h-[10px] rounded-full mx-30`}
+    />
+  </div>
 )
 
 type Props = {
@@ -45,7 +45,7 @@ const MainMenu = ({ activePage = 'home' }: Props) => {
       <li>
         <MainMenuItem
           label={'blog'}
-          url='blog'
+          url='/blog'
           active={activePage === 'blog'}
         />
       </li>
