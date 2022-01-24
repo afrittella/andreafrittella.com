@@ -7,10 +7,16 @@
 @layer components {
     html, body {
         @apply bg-black;
+        @apply text-gray-200;
+        @apply typo-default;
     }
 
     body > div {
-        @apply w-screen h-screen land:h-full land:pt-5;
+        @apply w-screen xl:max-w-screen-2xl xl:m-auto land:h-full pt-6 pb-6;
+    }
+
+    .main-gradient {
+        @apply bg-gradient-to-r from-[#CA3CCD] via-[#4CE6F0] to-[#0AFF95];
     }
 
     .typo-title {
@@ -22,6 +28,34 @@
     }
 
     .text-gradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-[#CA3CCD] via-[#4CE6F0] to-[#0AFF95];
+        @apply main-gradient bg-clip-text text-transparent;
+    }
+
+    .beatport {
+        @apply text-beatport;
+    }
+
+    .facebook {
+        @apply text-facebook;
+    }
+
+    .instagram {
+        @apply text-instagram;
+    }
+
+    .mixcloud {
+        @apply text-mixcloud;
+    }
+
+    .soundcloud {
+        @apply text-soundcloud;
+    }
+
+    .twitter {
+        @apply text-twitter;
+    }
+
+    .youtube {
+        @apply text-youtube;
     }
 }
