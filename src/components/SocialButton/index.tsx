@@ -1,4 +1,4 @@
-import { Icon } from 'components/SocialButton/types'
+import { SocialLink } from 'components/SocialButton/types'
 import { SocialIcon } from 'components/SocialIcon'
 import Link from 'next/link'
 
@@ -6,7 +6,7 @@ const SocialButton = ({
   service,
   url,
   label,
-}: Pick<Icon, 'url' | 'label' | 'service'>) => {
+}: Pick<SocialLink, 'url' | 'label' | 'service'>) => {
   return (
     <Link href={url} passHref={true}>
       <a

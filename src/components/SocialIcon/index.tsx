@@ -41,7 +41,6 @@ const SocialIcon = ({ service }: Props) => {
         width={'100%'}
         height={'100%'}
         alt={service}
-        placeholder='blur'
       />
     </div>
   )
