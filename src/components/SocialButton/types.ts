@@ -5,7 +5,7 @@ export enum CATEGORY {
   IDW = 'idw',
 }
 
-export type Icon = {
+export type SocialLink = {
   category: CATEGORY
   service: SERVICE
   url: string

@@ -1,7 +1,7 @@
-import { CATEGORY, Icon } from 'components/SocialButton/types'
+import { CATEGORY, SocialLink } from 'components/SocialButton/types'
 import { SERVICE } from 'components/SocialIcon/types'
 
-export const socialLinks: Icon[] = [
+export const socialLinks: SocialLink[] = [
   {
     category: CATEGORY.IDW,
     service: SERVICE.BEATPORT,
@@ -64,6 +64,9 @@ export const socialLinks: Icon[] = [
   },
 ]
 
-export const getSocialLinks = (category: CATEGORY): Icon[] => {
-  return socialLinks.filter((link) => link.category === category)
+export const getSocialLinks = (
+  category: CATEGORY,
+  links: SocialLink[]
+): SocialLink[] => {
+  return links.filter((link) => link.category === category)
 }

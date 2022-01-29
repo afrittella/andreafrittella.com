@@ -2,8 +2,14 @@ import type { NextPage } from 'next'
 import { BackgroundPhoto } from 'components/BackgroundPhoto'
 import { Layout } from 'components/Layout'
 import React from 'react'
+import { GetStaticProps } from 'next'
+import { getAirtable } from 'services/airtable'
 
-const About: NextPage = () => {
+type Props = {
+  bio: string
+}
+
+const About: NextPage<Props> = ({ bio }) => {
   return (
     <Layout activePage='about' title='About'>
       <div
@@ -13,24 +19,22 @@ const About: NextPage = () => {
         <div className='order-last lg:order-first flex-1'>
           <BackgroundPhoto page='about' />
         </div>
-        <div className='text-sm lg:text-xl flex-1 leading-relaxed text-left'>
-          <p>
-            {`Andrea Frittella is a DJ and producer since the late '90s, currently
-            based in Luxembourg. Eclectic and a lover of all music, Andrea is
-            also known for the "Irregular Disco Workers" project and the indie
-            labels "Klop music" and "Disco Volante". His music touches various
-            sonic nuances, with a predilection for disco and house sounds.`}
-          </p>
-
-          <p className='pt-4'>
-            {`There are numerous labels and artists with whom he has collaborated
-            all over the world. His tracks and remixes have been released on:
-            Feedelity, Nang, Rare Wiri, Bordello a Parigi, and many others.`}
-          </p>
+        <div className='text-sm lg:text-xl flex-1 leading-relaxed text-left whitespace-pre-line'>
+          {bio}
         </div>
       </div>
     </Layout>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const airtable = getAirtable()
+  const result = await airtable('profile').select({}).firstPage()
+  const profile = result[0].fields
+
+  return {
+    props: { bio: profile?.bio },
+  }
 }
 
 export default About
