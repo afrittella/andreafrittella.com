@@ -64,6 +64,9 @@ export const socialLinks: SocialLink[] = [
   },
 ]
 
-export const getSocialLinks = (category: CATEGORY, links: SocialLink[]): SocialLink[] => {
+export const getSocialLinks = (
+  category: CATEGORY,
+  links: SocialLink[]
+): SocialLink[] => {
   return links.filter((link) => link.category === category)
 }

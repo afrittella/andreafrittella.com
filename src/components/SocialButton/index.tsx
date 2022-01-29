@@ -11,7 +11,7 @@ const SocialButton = ({
     <Link href={url} passHref={true}>
       <a
         target='_blank'
-        rel="noopener"
+        rel='noopener'
         className='m-auto main-gradient max-w-[430px] min-w-[340px] lg:min-w-[422px] w-full h-[100px] p-[1px] rounded-xl hover:-translate-y-1 transition-all ease-in-out duration-200'
       >
         <span className='block bg-black w-full h-full rounded-xl -z-10 flex items-stretch justify-items-start'>

@@ -1,7 +1,4 @@
-import type {
-  GetStaticProps,
-  NextPage,
-} from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import { Layout } from 'components/Layout'
 import React from 'react'
 import { getSocialLinks } from 'config/social'
