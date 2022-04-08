@@ -6,13 +6,14 @@ import React from 'react'
 type Props = {
   title?: string
   activePage?: string
+  children: React.ReactNode
 }
 
-const Layout: React.FC<Props> = ({
+const Layout = ({
   activePage = 'home',
   title = '',
   children,
-}) => {
+}: Props) => {
   return (
     <div className='w-full h-full'>
       <Head>
