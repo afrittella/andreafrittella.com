@@ -1,7 +1,5 @@
-const { withPlaiceholder } = require('@plaiceholder/next')
-
 /** @type {import('next').NextConfig} */
-module.exports = withPlaiceholder({
+module.exports = {
   reactStrictMode: false,
   swcMinify: true,
   basePath: '',
@@ -9,7 +7,4 @@ module.exports = withPlaiceholder({
     locales: ['en'],
     defaultLocale: 'en',
   },
-  images: {
-    domains: ['i.ytimg.com']
-  }
-})
+}
