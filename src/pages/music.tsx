@@ -24,7 +24,7 @@ const Music: NextPage<Props> = ({ videos }) => {
 
   return (
     <Layout activePage='music' title='Music'>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch justify-around gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch justify-around gap-6'>
         {videos.map((video) => (
           <VideoThumbnail
             key={video.contentDetails?.videoId}
