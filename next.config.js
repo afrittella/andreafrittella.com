@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   basePath: '',
   i18n: {
     locales: ['en'],
     defaultLocale: 'en',
-  }
+  },
 }

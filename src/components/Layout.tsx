@@ -9,15 +9,11 @@ type Props = {
   children: React.ReactNode
 }
 
-const Layout = ({
-  activePage = 'home',
-  title = '',
-  children,
-}: Props) => {
+const Layout = ({ activePage = 'home', title = '', children }: Props) => {
   return (
     <div className='w-full h-full'>
       <Head>
-        <title>{title ? title + ' | ' : ''} Andrea Frittella</title>
+        <title>{`${title ? title + ' | ' : ''} Andrea Frittella`}</title>
         <meta name='description' content='AndreaFrittella.com' />
         <meta
           name='viewport'
