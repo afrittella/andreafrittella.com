@@ -66,6 +66,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { videos: playlistContent.data.items },
+    revalidate: 600,
   }
 }
 
