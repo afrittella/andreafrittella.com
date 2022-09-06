@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@googleapis/youtube": "6.0.0",
-    "@headlessui/react": "1.6.6",
+    "@headlessui/react": "1.7.0",
     "airtable": "0.11.4",
     "next": "12.2.5",
     "react": "18.2.0",
