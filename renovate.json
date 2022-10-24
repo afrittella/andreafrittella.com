@@ -1,6 +1,9 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    ":rebaseStalePrs",
+    "schedule:earlyMondays"
   ],
-  "baseBranches": ["dev"]
+  "baseBranches": ["dev"],
+  "automergeStrategy": "squash"
 }
