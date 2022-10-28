@@ -1,6 +1,6 @@
 import React from 'react'
 import { SERVICE } from 'components/SocialIcon/types'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import beatport from 'assets/images/icons/beatport.svg'
 import facebook from 'assets/images/icons/facebook.svg'
@@ -38,8 +38,6 @@ const SocialIcon = ({ service }: Props) => {
     <div className='max-w-[48px] lg:max-w-[64px]'>
       <Image
         src={getIcon(service)}
-        width={'100%'}
-        height={'100%'}
         alt={service}
       />
     </div>

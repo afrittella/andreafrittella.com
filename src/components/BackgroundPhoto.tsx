@@ -1,7 +1,7 @@
 import React from 'react'
 import home from 'assets/images/home.png'
 import about from 'assets/images/about.png'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 type Props = {
   page?: 'home' | 'about'
