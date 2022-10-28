@@ -3,14 +3,14 @@ import Link from 'next/link'
 const MainMenuItem = ({ label = '', url = '#', active = false }) => (
   <div className='flex flex-col items-center'>
     <div className='w-full'>
-      <Link href={url} passHref={true}>
-        <a
-          className={`transition-color ease-in-out duration-300 ${
-            active ? 'text-white' : ''
-          } hover:text-white`}
-        >
-          {label}
-        </a>
+      <Link
+        href={url}
+        passHref={true}
+        className={`transition-color ease-in-out duration-300 ${
+          active ? 'text-white' : ''
+        } hover:text-white`}
+      >
+        {label}
       </Link>
     </div>
     <div
