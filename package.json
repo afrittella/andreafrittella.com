@@ -11,7 +11,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@googleapis/youtube": "6.0.0",
+    "@googleapis/youtube": "8.0.0",
     "@headlessui/react": "^1.7.3",
     "airtable": "^0.11.5",
     "next": "^13.0.0",
