@@ -36,10 +36,7 @@ export const getIcon = (service: SERVICE): string => {
 const SocialIcon = ({ service }: Props) => {
   return (
     <div className='max-w-[48px] lg:max-w-[64px]'>
-      <Image
-        src={getIcon(service)}
-        alt={service}
-      />
+      <Image src={getIcon(service)} alt={service} />
     </div>
   )
 }
