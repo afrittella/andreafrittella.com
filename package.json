@@ -13,6 +13,7 @@
   "dependencies": {
     "@googleapis/youtube": "^8.0.0",
     "@headlessui/react": "^1.7.4",
+    "@vercel/analytics": "^1.0.0",
     "airtable": "^0.11.5",
     "next": "^13.0.3",
     "react": "18.2.0",
