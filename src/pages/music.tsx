@@ -1,17 +1,24 @@
-import type { GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import { Layout } from 'components/Layout'
 import { VideoThumbnail } from 'components/VideoThumbnail'
-import { youtube, youtube_v3 } from '@googleapis/youtube'
 import { VideoPlayer } from 'components/VideoPlayer'
+import { youtube_v3 } from '@googleapis/youtube'
+import useSWR from 'swr'
 
-type Props = {
-  videos: (youtube_v3.Schema$PlaylistItem & { player: string })[]
-}
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
-const Music: NextPage<Props> = ({ videos }) => {
+const Music = () => {
+  const { data, error } = useSWR('/api/getVideos', fetcher)
+
+  const [videos, setVideos] = React.useState<youtube_v3.Schema$PlaylistItem[]>()
   const [isModalOpen, setModalOpen] = React.useState(false)
   const [videoId, setVideoId] = React.useState('')
+
+  React.useEffect(() => {
+    if (data && !error) {
+      setVideos(data)
+    }
+  }, [data, error])
 
   if (!videos) {
     return <></>
@@ -42,32 +49,6 @@ const Music: NextPage<Props> = ({ videos }) => {
       />
     </Layout>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const yt = youtube({
-    version: 'v3',
-    auth: process.env.YOUTUBE_KEY as string,
-  })
-
-  const playlistContent = await yt.playlistItems.list({
-    part: ['snippet', 'contentDetails'],
-    playlistId: 'PLKqfdNXrLRbYWMkG_idJRNBMDkmB3nDQN',
-    maxResults: 50,
-  })
-
-  if (!playlistContent.data.items) {
-    return {
-      props: {
-        videos: [],
-      },
-    }
-  }
-
-  return {
-    props: { videos: playlistContent.data.items },
-    revalidate: 600,
-  }
 }
 
 export default Music

@@ -1,6 +1,18 @@
 import Link from 'next/link'
 
-const MainMenuItem = ({ label = '', url = '#', active = false }) => (
+type ItemProps = {
+  label?: string
+  url?: string
+  active?: boolean
+  target?: string
+}
+
+const MainMenuItem = ({
+  label = '',
+  url = '#',
+  active = false,
+  target,
+}: ItemProps) => (
   <div className='flex flex-col items-center'>
     <div className='w-full'>
       <Link
@@ -9,6 +21,7 @@ const MainMenuItem = ({ label = '', url = '#', active = false }) => (
         className={`transition-color ease-in-out duration-300 ${
           active ? 'text-white' : ''
         } hover:text-white`}
+        target={target}
       >
         {label}
       </Link>
@@ -44,16 +57,17 @@ const MainMenu = ({ activePage = 'home' }: Props) => {
       </li>
       <li>
         <MainMenuItem
-          label={'blog'}
-          url='/blog'
-          active={activePage === 'blog'}
+          label={'social'}
+          url='/social'
+          active={activePage === 'social'}
         />
       </li>
       <li>
         <MainMenuItem
-          label={'social'}
-          url='/social'
-          active={activePage === 'social'}
+          label={'irregular disco workers'}
+          url='https://soundcloud.com/IrregularDiscoWorkers'
+          active={activePage === 'blog'}
+          target={'_blank'}
         />
       </li>
     </ul>
