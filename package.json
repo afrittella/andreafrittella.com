@@ -10,6 +10,9 @@
     "format": "prettier --write src",
     "type-check": "tsc"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "@googleapis/youtube": "^9.0.0",
     "@headlessui/react": "^1.7.4",
