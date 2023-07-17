@@ -23,7 +23,7 @@ const Music = () => {
 
   if (!videos) {
     return <Layout activePage='music' title='Music'>
-      <FaSpinner className={"spin"} />
+      <FaSpinner className={"animate-spin"} size={"2"}/>
     </Layout>
   }
 
