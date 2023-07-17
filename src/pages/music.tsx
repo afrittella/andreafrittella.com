@@ -4,6 +4,7 @@ import { VideoThumbnail } from 'components/VideoThumbnail'
 import { VideoPlayer } from 'components/VideoPlayer'
 import { youtube_v3 } from '@googleapis/youtube'
 import useSWR from 'swr'
+import { FaSpinner } from 'react-icons/fa6'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
@@ -21,7 +22,9 @@ const Music = () => {
   }, [data, error])
 
   if (!videos) {
-    return <></>
+    return <Layout activePage='music' title='Music'>
+      <FaSpinner className={"spin"} />
+    </Layout>
   }
 
   const handleThumbClick = (videoId: string) => {
