@@ -38,6 +38,11 @@ const Music = () => {
     setModalOpen(true)
   }
 
+  const handleChangeTab = (tab: string) => {
+    setVideos([])
+    setTab(tab)
+  }
+
   return (
     <Layout activePage='music' title='Music'>
       <div className='flex gap-4 w-full justify-between mb-4'>
@@ -47,7 +52,7 @@ const Music = () => {
               ? 'border-white text-white'
               : 'border-stone-400 text-stone-400'
           }`}
-          onClick={() => tab !== 'releases' && setTab('releases')}
+          onClick={() => tab !== 'releases' && handleChangeTab('releases')}
         >
           Releases
         </div>
@@ -57,7 +62,7 @@ const Music = () => {
               ? 'border-white text-white'
               : 'border-stone-400 text-stone-400'
           }`}
-          onClick={() => tab !== 'remixes' && setTab('remixes')}
+          onClick={() => tab !== 'remixes' && handleChangeTab('remixes')}
         >
           Remixes
         </div>
@@ -67,7 +72,7 @@ const Music = () => {
               ? 'border-white text-white'
               : 'border-stone-400 text-stone-400'
           }`}
-          onClick={() => tab !== 'edits' && setTab('edits')}
+          onClick={() => tab !== 'edits' && handleChangeTab('edits')}
         >
           Edits & Reworks
         </div>
@@ -77,7 +82,7 @@ const Music = () => {
               ? 'border-white text-white'
               : 'border-stone-400 text-stone-400'
           }`}
-          onClick={() => tab !== 'mixtapes' && setTab('mixtapes')}
+          onClick={() => tab !== 'mixtapes' && handleChangeTab('mixtapes')}
         >
           Mixtapes
         </div>
