@@ -65,7 +65,7 @@ const MainMenu = ({ activePage = 'home' }: Props) => {
       <li>
         <MainMenuItem
           label={'irregular disco workers'}
-          url='https://soundcloud.com/IrregularDiscoWorkers'
+          url='https://linktr.ee/irregulardiscoworkers'
           active={activePage === 'blog'}
           target={'_blank'}
         />

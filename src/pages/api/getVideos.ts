@@ -1,7 +1,16 @@
 import { youtube, youtube_v3 } from '@googleapis/youtube'
 import { NextApiRequest, NextApiResponse } from 'next'
 
-async function getVideos() {
+type PlaylistType = 'edits' | 'releases' | 'remixes' | 'mixtapes'
+
+const PLAYLISTS: Record<PlaylistType, string> = {
+  remixes: 'PLKqfdNXrLRbYWMkG_idJRNBMDkmB3nDQN',
+  edits: 'PLKqfdNXrLRbb9G7QQFMQmdjeBLRJKYPA0',
+  releases: 'PLKqfdNXrLRbYGUK0efJrfAks_swUXtYEb',
+  mixtapes: 'PLKqfdNXrLRbaaF-r8swzRhjZdxl6StzAZ',
+}
+
+async function getVideos(playlist: PlaylistType = 'releases') {
   const yt = youtube({
     version: 'v3',
     auth: process.env.YOUTUBE_KEY as string,
@@ -9,7 +18,7 @@ async function getVideos() {
 
   const playlistContent = await yt.playlistItems.list({
     part: ['snippet', 'contentDetails'],
-    playlistId: 'PLKqfdNXrLRbYWMkG_idJRNBMDkmB3nDQN',
+    playlistId: PLAYLISTS[playlist],
     maxResults: 60,
   })
 
@@ -17,13 +26,22 @@ async function getVideos() {
     return []
   }
 
-  return playlistContent.data.items
+  console.log(playlistContent.data.items)
+
+  return playlistContent.data.items.sort((a, b) =>
+    (a.contentDetails?.videoPublishedAt || '') >
+    (b.contentDetails?.videoPublishedAt || '')
+      ? -1
+      : 1,
+  )
 }
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<youtube_v3.Schema$PlaylistItem[]>
+  res: NextApiResponse<youtube_v3.Schema$PlaylistItem[]>,
 ) {
-  const videos = await getVideos()
+  const videos = await getVideos(
+    (req.query['tab'] as PlaylistType) || 'releases',
+  )
   res.status(200).json(videos)
 }
