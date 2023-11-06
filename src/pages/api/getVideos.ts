@@ -26,8 +26,6 @@ async function getVideos(playlist: PlaylistType = 'releases') {
     return []
   }
 
-  console.log(playlistContent.data.items)
-
   return playlistContent.data.items.sort((a, b) =>
     (a.contentDetails?.videoPublishedAt || '') >
     (b.contentDetails?.videoPublishedAt || '')
