@@ -19,6 +19,7 @@ module.exports = {
         soundcloud: '#FF3300',
         twitter: '#1DA1F2',
         youtube: '#FF0000',
+        subtitle: '#8B8389',
       },
       keyframes: {
         progress: {
