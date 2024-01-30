@@ -1,15 +1,9 @@
+import type { VideoThumbnailProps } from '../../types'
 import { LazyLoading } from 'components/LazyLoading'
 import { ClientOnly } from 'components/ClientOnly'
 import { IoLogoYoutube } from 'react-icons/io'
 
-type Props = {
-  title: string
-  image: string
-  videoId: string
-  onThumbClick: (videoId: string) => void
-}
-
-const VideoThumbnail = ({ title, image, videoId, onThumbClick }: Props) => {
+const VideoThumbnail = ({ title, image, videoId, onThumbClick }: VideoThumbnailProps) => {
   const handleThumbClick = () => {
     onThumbClick(videoId)
   }

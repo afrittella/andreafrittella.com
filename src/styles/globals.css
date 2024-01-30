@@ -10,10 +10,11 @@
     @apply bg-black;
     @apply text-gray-200;
     @apply typo-default;
+    @apply overflow-x-hidden;
   }
 
   body > div {
-    @apply w-screen xl:max-w-screen-2xl xl:m-auto land:h-full pt-6 pb-6;
+
   }
 
   .main-gradient {

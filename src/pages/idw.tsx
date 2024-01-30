@@ -15,18 +15,22 @@ type Props = {
 
 const About: NextPage<Props> = ({ bio, socialLinks }) => {
   return (
-    <SingleLayout activePage='about' title='About' showBackground={false}>
+    <SingleLayout
+      activePage='idw'
+      title='Irregular Disco Workers'
+      showBackground={false}
+    >
       <div
         className='flex flex-col lg:flex-row items-center
       justify-items-center px-8'
       >
         <div className='order-last lg:order-first flex-1'>
-          <BackgroundPhoto page='about' />
+          <BackgroundPhoto page='idw' />
         </div>
         <div className='text-sm lg:text-xl flex-1 leading-relaxed text-left whitespace-pre-line gap-4 flex flex-col'>
           <div>{bio}</div>
           <div className={'flex gap-3'}>
-            {getSocialLinks(CATEGORY.AF, socialLinks).map((l, index) => (
+            {getSocialLinks(CATEGORY.IDW, socialLinks).map((l, index) => (
               <SocialLink
                 key={`AF_${index}`}
                 service={l.service}
@@ -47,7 +51,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const resultSocial = await airtable('social')
     .select({ sort: [{ field: 'order' }] })
     .all()
-  const profile = result.find((r) => r.fields.key === 'andreafrittella')?.fields || { bio: '' }
+
+  const profile = result.find((r) => r.fields.key === 'idw')?.fields || { bio: '' }
   const socialLinks: SocialLinkProps[] = []
 
   resultSocial.forEach((record) => {
