@@ -19,6 +19,11 @@ const Layout = ({ activePage = 'home', title = '', children }: Props) => {
           name='viewport'
           content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
         />
+        <meta property='og:url' content='https://www.andreafrittella.com' />
+        <meta property='og:type' content='website' />
+        <meta property={'og:title'} content={'AndreaFrittella.com'} />
+        <meta property={'og:image'} content={'https://www.andreafrittella.com/images/social.png'} />
+
         <link rel='icon' type='image/x-icon' href='/icons/favicon.ico' />
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
         <link rel='apple-touch-icon' href='/icons/apple-touch-icon.png' />
