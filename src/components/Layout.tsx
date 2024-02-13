@@ -29,7 +29,7 @@ const Layout = ({ activePage = 'home', title = '', children }: Props) => {
         <meta
           name='image'
           property='og:image'
-          content='https://www.andreafrittella.com/social.png'
+          content='https://www.andreafrittella.com/images/social.png'
         />
 
         <link rel='icon' type='image/x-icon' href='/icons/favicon.ico' />
