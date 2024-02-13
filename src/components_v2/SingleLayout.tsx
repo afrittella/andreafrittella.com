@@ -21,10 +21,18 @@ const SingleLayout = ({
           name='viewport'
           content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
         />
-        <meta property='og:url' content='https://www.andreafrittella.com' />
-        <meta property='og:type' content='website' />
-        <meta property={'og:title'} content={'AndreaFrittella.com'} />
-        <meta property={'og:image'} content={'https://www.andreafrittella.com/social.png'} />
+        <meta
+          name='url'
+          property='og:url'
+          content='https://www.andreafrittella.com'
+        />
+        <meta name='type' property='og:type' content='website' />
+        <meta name='title' property='og:title' content='AndreaFrittella.com' />
+        <meta
+          name='image'
+          property='og:image'
+          content='https://www.andreafrittella.com/social.png'
+        />
 
         <link rel='icon' type='image/x-icon' href='/icons/favicon.ico' />
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
@@ -48,7 +56,11 @@ const SingleLayout = ({
         <div className={'z-50'}>
           <MainMenu activePage={activePage} />
         </div>
-        <div className={`z-50 pt-6 w-full ${centered ? 'flex items-center justify-center' : ''} xl:w-2/3`}>{children}</div>
+        <div
+          className={`z-50 pt-6 w-full ${centered ? 'flex items-center justify-center' : ''} xl:w-2/3`}
+        >
+          {children}
+        </div>
       </main>
     </div>
   )
