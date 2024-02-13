@@ -22,7 +22,7 @@ const Layout = ({ activePage = 'home', title = '', children }: Props) => {
         <meta property='og:url' content='https://www.andreafrittella.com' />
         <meta property='og:type' content='website' />
         <meta property={'og:title'} content={'AndreaFrittella.com'} />
-        <meta property={'og:image'} content={'https://www.andreafrittella.com/images/social.png'} />
+        <meta property={'og:image'} content={'https://www.andreafrittella.com/social.png'} />
 
         <link rel='icon' type='image/x-icon' href='/icons/favicon.ico' />
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />
