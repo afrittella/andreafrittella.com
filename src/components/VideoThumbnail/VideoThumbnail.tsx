@@ -3,7 +3,12 @@ import { LazyLoading } from 'components/LazyLoading'
 import { ClientOnly } from 'components/ClientOnly'
 import { IoLogoYoutube } from 'react-icons/io'
 
-const VideoThumbnail = ({ title, image, videoId, onThumbClick }: VideoThumbnailProps) => {
+const VideoThumbnail = ({
+  title,
+  image,
+  videoId,
+  onThumbClick,
+}: VideoThumbnailProps) => {
   const handleThumbClick = () => {
     onThumbClick(videoId)
   }

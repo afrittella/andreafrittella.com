@@ -28,7 +28,11 @@ const ElectronicEmotions: NextPage<Props> = ({ text }) => {
         <div className='text-sm lg:text-xl flex-1 leading-relaxed text-left whitespace-pre-line gap-4 flex flex-col'>
           <div>{text}</div>
           <div>
-            <div className={'bg-[#007ec3] max-w-fit rounded-xl pt-2 px-1 opacity-50 hover:opacity-100'}>
+            <div
+              className={
+                'bg-[#007ec3] max-w-fit rounded-xl pt-2 px-1 opacity-50 hover:opacity-100'
+              }
+            >
               <Link
                 href={'https://www.radioara.org/shows/electronic-emotions'}
                 target={'_blank'}
@@ -53,7 +57,9 @@ const ElectronicEmotions: NextPage<Props> = ({ text }) => {
 export const getStaticProps: GetStaticProps = async () => {
   const airtable = getAirtable()
   const result = await airtable('profile').select({}).firstPage()
-  const profile = result.find((r) => r.fields.key === 'ee')?.fields || { bio: '' }
+  const profile = result.find((r) => r.fields.key === 'ee')?.fields || {
+    bio: '',
+  }
   return {
     props: {
       text: profile?.bio || '',

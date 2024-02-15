@@ -8,7 +8,7 @@ export enum SERVICE {
   MIXCLOUD = 'mixcloud',
   LINKEDIN = 'linkedin',
   GITHUB = 'github',
-  SPOTIFY='spotify',
+  SPOTIFY = 'spotify',
   WEB = 'web',
 }
 

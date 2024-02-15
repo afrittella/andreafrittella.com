@@ -47,7 +47,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const resultSocial = await airtable('social')
     .select({ sort: [{ field: 'order' }] })
     .all()
-  const profile = result.find((r) => r.fields.key === 'andreafrittella')?.fields || { bio: '' }
+  const profile = result.find((r) => r.fields.key === 'andreafrittella')
+    ?.fields || { bio: '' }
   const socialLinks: SocialLinkProps[] = []
 
   resultSocial.forEach((record) => {

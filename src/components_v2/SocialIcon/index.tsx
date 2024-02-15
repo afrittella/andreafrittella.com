@@ -42,7 +42,6 @@ export const getIcon = (service: SERVICE): string => {
       return web
     case SERVICE.SPOTIFY:
       return spotify
-
   }
 }
 
