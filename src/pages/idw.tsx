@@ -52,7 +52,9 @@ export const getStaticProps: GetStaticProps = async () => {
     .select({ sort: [{ field: 'order' }] })
     .all()
 
-  const profile = result.find((r) => r.fields.key === 'idw')?.fields || { bio: '' }
+  const profile = result.find((r) => r.fields.key === 'idw')?.fields || {
+    bio: '',
+  }
   const socialLinks: SocialLinkProps[] = []
 
   resultSocial.forEach((record) => {

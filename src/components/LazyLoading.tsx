@@ -38,7 +38,7 @@ export const LazyLoading = ({
           threshold,
           rootMargin,
           root: null,
-        }
+        },
       )
     })
 

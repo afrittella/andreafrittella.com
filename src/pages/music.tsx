@@ -1,5 +1,4 @@
 import React from 'react'
-import { Layout } from 'components/Layout'
 import { VideoThumbnail } from 'components_v2/VideoThumbnail'
 import { VideoPlayer } from 'components/VideoPlayer'
 import { youtube_v3 } from '@googleapis/youtube'
@@ -32,9 +31,9 @@ const Music = () => {
 
   if (!videos) {
     return (
-      <Layout activePage='music' title='Music'>
+      <SingleLayout activePage='music' title='Music'>
         <FaSpinner className={'animate-spin text-stone-400'} size={'24'} />
-      </Layout>
+      </SingleLayout>
     )
   }
 
