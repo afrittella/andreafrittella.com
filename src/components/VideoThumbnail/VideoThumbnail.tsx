@@ -36,7 +36,7 @@ const VideoThumbnail = ({
             </div>
 
             <div
-              className='absolute bottom-0 flex-grow-0 w-full break-words
+              className='absolute bottom-0 grow-0 w-full break-words
           bg-black/30 p-2 text-center z-10 group-hover:bg-black/70 transition-opacity ease-in-out duration-300'
             >
               {title}
