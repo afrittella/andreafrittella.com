@@ -1,8 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Oxanium:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Oxanium:wght@200;300;400;500;600;700&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility main-gradient {
+  @apply bg-linear-to-r from-[#CA3CCD] via-[#4CE6F0] to-[#0AFF95];
+}
+
+@utility typo-title {
+  @apply font-Orbitron font-bold;
+}
+
+@utility typo-default {
+  @apply font-Oxanium;
+}
+
+@utility text-gradient {
+  @apply main-gradient bg-clip-text text-transparent;
+}
+
+@utility beatport {
+  @apply text-beatport;
+}
+
+@utility facebook {
+  @apply text-facebook;
+}
+
+@utility instagram {
+  @apply text-instagram;
+}
+
+@utility mixcloud {
+  @apply text-mixcloud;
+}
+
+@utility soundcloud {
+  @apply text-soundcloud;
+}
+
+@utility twitter {
+  @apply text-twitter;
+}
+
+@utility youtube {
+  @apply text-youtube;
+}
 
 @layer components {
   html,
@@ -11,52 +74,5 @@
     @apply text-gray-200;
     @apply typo-default;
     @apply overflow-x-hidden;
-  }
-
-  body > div {
-  }
-
-  .main-gradient {
-    @apply bg-gradient-to-r from-[#CA3CCD] via-[#4CE6F0] to-[#0AFF95];
-  }
-
-  .typo-title {
-    @apply font-Orbitron font-bold;
-  }
-
-  .typo-default {
-    @apply font-Oxanium;
-  }
-
-  .text-gradient {
-    @apply main-gradient bg-clip-text text-transparent;
-  }
-
-  .beatport {
-    @apply text-beatport;
-  }
-
-  .facebook {
-    @apply text-facebook;
-  }
-
-  .instagram {
-    @apply text-instagram;
-  }
-
-  .mixcloud {
-    @apply text-mixcloud;
-  }
-
-  .soundcloud {
-    @apply text-soundcloud;
-  }
-
-  .twitter {
-    @apply text-twitter;
-  }
-
-  .youtube {
-    @apply text-youtube;
   }
 }

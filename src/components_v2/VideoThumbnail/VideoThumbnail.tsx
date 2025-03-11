@@ -35,7 +35,7 @@ const VideoThumbnail = ({
           {/*</div>*/}
 
           <div
-            className='absolute top-0 flex-grow-0 w-full break-words
+            className='absolute top-0 grow-0 w-full break-words
           lg:bg-black/30 bg-black/70 p-2 text-left z-10 group-hover:bg-black/70 transition-opacity ease-in-out duration-300 flex gap-2 items-center'
           >
             <IoLogoYoutube
