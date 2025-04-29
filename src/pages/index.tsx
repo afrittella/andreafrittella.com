@@ -16,7 +16,7 @@ const Home: NextPage<Props> = ({ socialLinks }) => {
       <div className={'flex-col flex items-center justify-center w-full gap-4'}>
         <div className={'flex items-center justify-center w-3/4'}>
           <iframe
-            style={{borderRadius:'12px'}}
+            style={{ borderRadius: '12px' }}
             src='https://open.spotify.com/embed/album/4zrWXh7VzbgSrfjaevfXT7?utm_source=generator'
             width='100%'
             height='352'
@@ -26,15 +26,15 @@ const Home: NextPage<Props> = ({ socialLinks }) => {
           ></iframe>
         </div>
         <div className={'flex gap-3 w-full items-center justify-center'}>
-        {getSocialLinks(CATEGORY.AF, socialLinks).map((l, index) => (
-          <SocialLink
-            key={`AF_${index}`}
-            service={l.service}
-            label={l.label}
-            url={l.url}
-          />
-        ))}
-      </div>
+          {getSocialLinks(CATEGORY.AF, socialLinks).map((l, index) => (
+            <SocialLink
+              key={`AF_${index}`}
+              service={l.service}
+              label={l.label}
+              url={l.url}
+            />
+          ))}
+        </div>
       </div>
     </SingleLayout>
   )
