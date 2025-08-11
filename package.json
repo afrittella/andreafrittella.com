@@ -14,7 +14,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@googleapis/youtube": "^25.0.0",
+    "@googleapis/youtube": "^28.0.0",
     "@headlessui/react": "^2.2.7",
     "@vercel/speed-insights": "^1.2.0",
     "airtable": "^0.12.1",
