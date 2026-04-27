@@ -8,10 +8,7 @@ export const isTouchDevice = () => {
     return typeof window !== 'undefined' && window.matchMedia(query).matches
   }
 
-  if (
-    'ontouchstart' in window ||
-    (window?.Touch && document instanceof Touch)
-  ) {
+  if ('ontouchstart' in window || (window?.Touch && document instanceof Touch)) {
     return true
   }
   const query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('') // include the 'heartz' - https://git.io/vznFH

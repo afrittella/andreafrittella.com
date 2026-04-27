@@ -1,8 +1,7 @@
-import { GetStaticProps, NextPage } from 'next'
-import React from 'react'
+import type { GetStaticProps, NextPage } from 'next'
 import { SingleLayout } from '../components_v2/SingleLayout'
 import { getAirtable } from '../services/airtable'
-import { CATEGORY, SocialLinkProps } from '../types'
+import { CATEGORY, type SocialLinkProps } from '../types'
 import { getSocialLinks } from '../config/social'
 import { SocialLink } from '../components_v2/SocialLink'
 
@@ -16,6 +15,7 @@ const Home: NextPage<Props> = ({ socialLinks }) => {
       <div className={'flex-col flex items-center justify-center w-full gap-4'}>
         <div className={'flex items-center justify-center w-3/4'}>
           <iframe
+            title={'RAW by Andrea Frittella on Spotify'}
             style={{ borderRadius: '12px' }}
             src='https://open.spotify.com/embed/album/4zrWXh7VzbgSrfjaevfXT7?utm_source=generator'
             width='100%'
@@ -23,12 +23,15 @@ const Home: NextPage<Props> = ({ socialLinks }) => {
             allowFullScreen={false}
             allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
             loading='lazy'
-          ></iframe>
+          />
         </div>
         <div className={'flex gap-3 w-full items-center justify-center'}>
           {getSocialLinks(CATEGORY.AF, socialLinks).map((l, index) => (
             <SocialLink
-              key={`AF_${index}`}
+              key={`AF_${
+                // biome-ignore lint/suspicious/noArrayIndexKey: ok here
+                index
+              }`}
               service={l.service}
               label={l.label}
               url={l.url}

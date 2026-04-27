@@ -1,4 +1,4 @@
-import { MenuItem, TabSelectorProps } from '../types'
+import type { MenuItem, TabSelectorProps } from '../types'
 
 export const menuItems: MenuItem[] = [
   {

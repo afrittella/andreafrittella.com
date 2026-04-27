@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dialog } from '@headlessui/react'
+import { Dialog, DialogPanel } from '@headlessui/react'
 import { FaTimes } from 'react-icons/fa'
 
 type Props = {
@@ -23,26 +23,26 @@ export const VideoPlayer = ({ videoId, isOpen, onClose }: Props) => {
       <div className='fixed inset-0 bg-black/50' aria-hidden='true' />
 
       <div className='fixed inset-0 flex items-center justify-center p-0 lg:p-4'>
-        <Dialog.Panel className='w-full h-full flex flex-col items-center justify-center lg:mx-auto lg:w-6/12 lg:h-2/4 rounded-sm bg-black relative'>
-          {/*<Dialog.Title className='w-full p-1 text-center text-gray-400'>{title}</Dialog.Title>*/}
+        <DialogPanel className='w-full h-full flex flex-col items-center justify-center lg:mx-auto lg:w-6/12 lg:h-2/4 rounded-sm bg-black relative'>
           {!isLoaded && (
             <div className='absolute flex items-center justify-items-center bg-black w-full h-full'>
               <div className='w-full text-center'>loading...</div>
             </div>
           )}
           <iframe
+            title={`Video ${videoId}`}
             className='responsive w-full h-full lg:w-full'
             src={`//www.youtube.com/embed/${videoId}`}
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
             onLoad={() => setLoaded(true)}
-          ></iframe>
+          />
           <div className='absolute bg-black top-2 right-2 p-1'>
-            <button onClick={handleDeactivate} className='outline-hidden'>
+            <button type={'button'} onClick={handleDeactivate} className='outline-hidden'>
               <FaTimes className='outline-hidden transition-colors ease-in-out duration-300 text-gray-600 hover:text-white text-xl' />
             </button>
           </div>
-        </Dialog.Panel>
+        </DialogPanel>
       </div>
     </Dialog>
   )

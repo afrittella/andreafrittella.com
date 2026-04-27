@@ -1,7 +1,7 @@
 import React from 'react'
 import { VideoThumbnail } from 'components_v2/VideoThumbnail'
 import { VideoPlayer } from 'components/VideoPlayer'
-import { youtube_v3 } from '@googleapis/youtube'
+import type { youtube_v3 } from '@googleapis/youtube'
 import useSWR from 'swr'
 import { FaSpinner } from 'react-icons/fa6'
 import { SingleLayout } from '../components_v2/SingleLayout'
@@ -18,10 +18,7 @@ const Music = () => {
   const [videoId, setVideoId] = React.useState('')
   const [tab, setTab] = React.useState('releases')
 
-  const { data, error } = useSWR(
-    `/api/getVideos?tab=${tab ?? 'releases'}`,
-    fetcher,
-  )
+  const { data, error } = useSWR(`/api/getVideos?tab=${tab ?? 'releases'}`, fetcher)
 
   React.useEffect(() => {
     if (data && !error) {
@@ -87,11 +84,7 @@ const Music = () => {
           />
         ))}
       </div>
-      <VideoPlayer
-        videoId={videoId}
-        isOpen={isModalOpen}
-        onClose={() => setModalOpen(false)}
-      />
+      <VideoPlayer videoId={videoId} isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </SingleLayout>
   )
 }

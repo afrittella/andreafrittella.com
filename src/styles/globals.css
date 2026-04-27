@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Oxanium:wght@200;300;400;500;600;700&display=swap')
-layer(base);
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Oxanium:wght@200;300;400;500;600;700&display=swap")
+  layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@config '../../tailwind.config.js';
+@config "../../tailwind.config.js";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,

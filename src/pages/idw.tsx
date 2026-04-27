@@ -1,11 +1,10 @@
 import type { NextPage } from 'next'
-import { GetStaticProps } from 'next'
+import type { GetStaticProps } from 'next'
 import { BackgroundPhoto } from 'components/BackgroundPhoto'
-import React from 'react'
 import { getAirtable } from 'services/airtable'
 import { SingleLayout } from '../components_v2/SingleLayout'
 import { getSocialLinks } from '../config/social'
-import { CATEGORY, SocialLinkProps } from '../types'
+import { CATEGORY, type SocialLinkProps } from '../types'
 import { SocialLink } from '../components_v2/SocialLink'
 
 type Props = {
@@ -15,11 +14,7 @@ type Props = {
 
 const About: NextPage<Props> = ({ bio, socialLinks }) => {
   return (
-    <SingleLayout
-      activePage='idw'
-      title='Irregular Disco Workers'
-      showBackground={false}
-    >
+    <SingleLayout activePage='idw' title='Irregular Disco Workers' showBackground={false}>
       <div
         className='flex flex-col lg:flex-row items-center
       justify-items-center px-8'
@@ -32,7 +27,10 @@ const About: NextPage<Props> = ({ bio, socialLinks }) => {
           <div className={'flex gap-3'}>
             {getSocialLinks(CATEGORY.IDW, socialLinks).map((l, index) => (
               <SocialLink
-                key={`AF_${index}`}
+                key={`AF_${
+                  // biome-ignore lint/suspicious/noArrayIndexKey: ok here
+                  index
+                }`}
                 service={l.service}
                 label={l.label}
                 url={l.url}
