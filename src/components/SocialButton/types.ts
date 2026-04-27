@@ -1,4 +1,4 @@
-import { SERVICE } from 'components/SocialIcon/types'
+import type { SERVICE } from 'components/SocialIcon/types'
 
 export enum CATEGORY {
   AF = 'af',

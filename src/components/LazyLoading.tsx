@@ -51,7 +51,7 @@ export const LazyLoading = ({
 
   return (
     <div ref={ref} {...rest}>
-      {isVisible ? <>{children}</> : null}
+      {isVisible ? children : null}
     </div>
   )
 }

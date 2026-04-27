@@ -7,30 +7,19 @@ type ItemProps = {
   target?: string
 }
 
-const MainMenuItem = ({
-  label = '',
-  url = '#',
-  active = false,
-  target,
-}: ItemProps) => (
+const MainMenuItem = ({ label = '', url = '#', active = false, target }: ItemProps) => (
   <div className='flex flex-col items-center'>
     <div className='w-full'>
       <Link
         href={url}
         passHref={true}
-        className={`transition-color ease-in-out duration-300 ${
-          active ? 'text-white' : ''
-        } hover:text-white`}
+        className={`transition-color ease-in-out duration-300 ${active ? 'text-white' : ''} hover:text-white`}
         target={target}
       >
         {label}
       </Link>
     </div>
-    <div
-      className={`${
-        !active ? 'invisible' : ''
-      } bg-white block text-center w-[10px] h-[10px] rounded-full mx-30`}
-    />
+    <div className={`${!active ? 'invisible' : ''} bg-white block text-center w-2.5 h-2.5 rounded-full mx-30`} />
   </div>
 )
 
@@ -42,25 +31,13 @@ const MainMenu = ({ activePage = 'home' }: Props) => {
   return (
     <ul className='text-gray-500 list-none flex w-full items-center justify-between text-lg lg:text-xl'>
       <li>
-        <MainMenuItem
-          label={'about'}
-          url='/about'
-          active={activePage === 'about'}
-        />
+        <MainMenuItem label={'about'} url='/about' active={activePage === 'about'} />
       </li>
       <li>
-        <MainMenuItem
-          label={'music'}
-          url='/music'
-          active={activePage === 'music'}
-        />
+        <MainMenuItem label={'music'} url='/music' active={activePage === 'music'} />
       </li>
       <li>
-        <MainMenuItem
-          label={'social'}
-          url='/social'
-          active={activePage === 'social'}
-        />
+        <MainMenuItem label={'social'} url='/social' active={activePage === 'social'} />
       </li>
       <li>
         <MainMenuItem

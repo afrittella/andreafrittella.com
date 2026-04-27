@@ -1,6 +1,5 @@
-import React from 'react'
 import { SERVICE } from './types'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 
 import beatport from 'assets/images/icons/beatport.svg'
 import facebook from 'assets/images/icons/facebook.svg'
@@ -47,13 +46,15 @@ export const getIcon = (service: SERVICE): string => {
 
 const SocialIcon = ({ service }: Props) => {
   return (
-    <div className='max-w-[30px] lg:max-w-[40px]'>
+    <div className='max-w-7.5 lg:max-w-10'>
       <Image
         src={getIcon(service)}
         alt={service}
-        className={
-          'opacity-60 hover:opacity-100 transition-opacity ease-in-out duration-200'
-        }
+        className={'opacity-60 hover:opacity-100 transition-opacity ease-in-out duration-200'}
+        style={{
+          maxWidth: '100%',
+          height: 'auto',
+        }}
       />
     </div>
   )

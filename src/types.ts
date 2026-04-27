@@ -1,5 +1,5 @@
-import React from 'react'
-import { SERVICE } from './components/SocialIcon/types'
+import type React from 'react'
+import type { SERVICE } from './components/SocialIcon/types'
 
 export type MenuItem = {
   key: string

@@ -3,32 +3,29 @@ import { LazyLoading } from 'components/LazyLoading'
 import { ClientOnly } from 'components/ClientOnly'
 import { IoLogoYoutube } from 'react-icons/io'
 
-const VideoThumbnail = ({
-  title,
-  image,
-  videoId,
-  onThumbClick,
-}: VideoThumbnailProps) => {
+const VideoThumbnail = ({ title, image, videoId, onThumbClick }: VideoThumbnailProps) => {
   const handleThumbClick = () => {
     onThumbClick(videoId)
   }
 
   return (
     <ClientOnly>
-      <LazyLoading className='h-[250px]'>
+      <LazyLoading className='h-62.5'>
+        {/** biome-ignore lint/a11y/useKeyWithClickEvents: Ok here */}
+        {/** biome-ignore lint/a11y/noStaticElementInteractions: Ok here */}
         <div
-          className='cursor-pointer p-[1px] md:main-gradient rounded-xl hover:-translate-y-1 transition-all ease-in-out duration-200 h-[250px]'
+          className='cursor-pointer p-px md:main-gradient rounded-xl hover:-translate-y-1 transition-all ease-in-out duration-200 h-62.5'
           onClick={handleThumbClick}
         >
           <div
-            className={`group relative bg-black block w-full h-full rounded-xl flex flex-col items-center justify-items-center`}
+            className={
+              'group relative bg-black w-full h-full rounded-xl flex flex-col items-center justify-items-center'
+            }
           >
             <div
-              className='absolute w-full h-full transition-all ease-in-out duration-300 rounded-xl w-full h-full bg-clip-border bg-origin-border bg-center opacity-20 group-hover:opacity-100 bg-no-repeat'
+              className='absolute transition-all ease-in-out duration-300 rounded-xl w-full h-full bg-clip-border bg-origin-border bg-center opacity-20 group-hover:opacity-100 bg-no-repeat'
               style={{ backgroundImage: `url(${image})` }}
-            >
-              <></>
-            </div>
+            />
             <div className='flex-auto flex items-center justify-items-center'>
               <div className='p-2 text-center z-10 relative'>
                 <IoLogoYoutube className='text-gray-600 group-hover:text-youtube text-5xl z-10' />
@@ -36,7 +33,7 @@ const VideoThumbnail = ({
             </div>
 
             <div
-              className='absolute bottom-0 grow-0 w-full break-words
+              className='absolute bottom-0 grow-0 w-full wrap-break-word
           bg-black/30 p-2 text-center z-10 group-hover:bg-black/70 transition-opacity ease-in-out duration-300'
             >
               {title}

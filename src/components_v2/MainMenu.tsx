@@ -13,19 +13,13 @@ const MainMenuItem = ({
       <Link
         href={url}
         passHref={true}
-        className={`transition-color ease-in-out duration-300 ${
-          active ? 'text-white' : ''
-        } hover:text-white`}
+        className={`transition-color ease-in-out duration-300 ${active ? 'text-white' : ''} hover:text-white`}
         target={target ? target : ''}
       >
         {label}
       </Link>
     </div>
-    <div
-      className={`${
-        !active ? 'invisible' : ''
-      } bg-white block text-center w-[10px] h-[10px] rounded-full mx-30`}
-    />
+    <div className={`${!active ? 'invisible' : ''} bg-white block text-center w-2.5 h-2.5 rounded-full mx-30`} />
   </div>
 )
 
@@ -34,12 +28,7 @@ const MainMenu = ({ activePage = 'home' }: Menu) => {
     <ul className='text-gray-500 list-none max-w-full gap-4 flex items-center justify-between text-lg lg:text-xl z-50'>
       {menuItems.map((i) => (
         <li key={`main_${i.key}`}>
-          <MainMenuItem
-            label={i.label}
-            url={i.url}
-            active={i.key === activePage}
-            target={i.target}
-          />
+          <MainMenuItem label={i.label} url={i.url} active={i.key === activePage} target={i.target} />
         </li>
       ))}
     </ul>

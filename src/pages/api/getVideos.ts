@@ -1,5 +1,5 @@
-import { youtube, youtube_v3 } from '@googleapis/youtube'
-import { NextApiRequest, NextApiResponse } from 'next'
+import { youtube, type youtube_v3 } from '@googleapis/youtube'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 type PlaylistType = 'edits' | 'releases' | 'remixes' | 'mixtapes'
 
@@ -27,19 +27,11 @@ async function getVideos(playlist: PlaylistType = 'releases') {
   }
 
   return playlistContent.data.items.sort((a, b) =>
-    (a.contentDetails?.videoPublishedAt || '') >
-    (b.contentDetails?.videoPublishedAt || '')
-      ? -1
-      : 1,
+    (a.contentDetails?.videoPublishedAt || '') > (b.contentDetails?.videoPublishedAt || '') ? -1 : 1,
   )
 }
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<youtube_v3.Schema$PlaylistItem[]>,
-) {
-  const videos = await getVideos(
-    (req.query['tab'] as PlaylistType) || 'releases',
-  )
+export default async function handler(req: NextApiRequest, res: NextApiResponse<youtube_v3.Schema$PlaylistItem[]>) {
+  const videos = await getVideos((req.query.tab as PlaylistType) || 'releases')
   res.status(200).json(videos)
 }

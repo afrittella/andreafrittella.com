@@ -8,9 +8,7 @@ const Logo = () => (
     >
       Andrea Frittella
     </Link>
-    <div className={'typo-default text-xl text-gradient opacity-60'}>
-      dj | producer | software engineer
-    </div>
+    <div className={'typo-default text-xl text-gradient opacity-60'}>dj | producer | software engineer</div>
   </div>
 )
 

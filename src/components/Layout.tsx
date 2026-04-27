@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { Logo } from 'components/Logo'
 import { MainMenu } from 'components/MainMenu'
-import React from 'react'
 
 type Props = {
   title?: string
@@ -13,24 +12,13 @@ const Layout = ({ activePage = 'home', title = '', children }: Props) => {
   return (
     <div className='w-full h-full'>
       <Head>
-        <title>{`${title ? title + ' | ' : ''} Andrea Frittella`}</title>
+        <title>{`${title ? `${title} | ` : ''} Andrea Frittella`}</title>
         <meta name='description' content='AndreaFrittella.com' />
-        <meta
-          name='viewport'
-          content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
-        />
-        <meta
-          name='url'
-          property='og:url'
-          content='https://www.andreafrittella.com'
-        />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+        <meta name='url' property='og:url' content='https://www.andreafrittella.com' />
         <meta name='type' property='og:type' content='website' />
         <meta name='title' property='og:title' content='AndreaFrittella.com' />
-        <meta
-          name='image'
-          property='og:image'
-          content='https://www.andreafrittella.com/images/social.png'
-        />
+        <meta name='image' property='og:image' content='https://www.andreafrittella.com/images/social.png' />
 
         <link rel='icon' type='image/x-icon' href='/icons/favicon.ico' />
         <link rel='icon' href='/icons/favicon.svg' type='image/svg+xml' />

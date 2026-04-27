@@ -1,9 +1,8 @@
-import React from 'react'
 import home from 'assets/images/home.png'
 import about from 'assets/images/about.png'
 import ee from 'assets/images/logo_ee.png'
 import idw from 'assets/images/idw.png'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 
 type Props = {
   page?: 'home' | 'about' | 'ee' | 'idw'
@@ -25,9 +24,12 @@ const getImage = (page: Props['page']) => {
 const BackgroundPhoto = ({ page = 'home' }: Props) => (
   <Image
     src={getImage(page)}
-    layout='intrinsic'
     alt='AndreaFrittella.com'
     placeholder='blur'
+    style={{
+      maxWidth: '100%',
+      height: 'auto',
+    }}
   />
 )
 

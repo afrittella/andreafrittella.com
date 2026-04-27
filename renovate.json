@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "config:base",
-    ":rebaseStalePrs",
-    "schedule:earlyMondays"
-  ],
+  "extends": ["config:base", ":rebaseStalePrs", "schedule:earlyMondays"],
   "baseBranches": ["dev"],
   "automergeStrategy": "squash"
 }
