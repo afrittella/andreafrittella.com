@@ -4,11 +4,11 @@ import { VideoPlayer } from 'components/VideoPlayer'
 import type { youtube_v3 } from '@googleapis/youtube'
 import useSWR from 'swr'
 import { FaSpinner } from 'react-icons/fa6'
-import { SingleLayout } from '../components_v2/SingleLayout'
+import { SingleLayout } from 'components_v2/SingleLayout'
 
-import { isTouchDevice } from '../services/touchDetect'
-import { youtubeTabs } from '../config/menu'
-import { TabSelector } from '../components_v2/TabSelector/TabSelector'
+import { isTouchDevice } from 'services/touchDetect'
+import { youtubeTabs } from 'config/menu'
+import { TabSelector } from 'components_v2/TabSelector/TabSelector'
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 

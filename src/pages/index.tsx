@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next'
-import { SingleLayout } from '../components_v2/SingleLayout'
-import { getAirtable } from '../services/airtable'
-import { CATEGORY, type SocialLinkProps } from '../types'
-import { getSocialLinks } from '../config/social'
-import { SocialLink } from '../components_v2/SocialLink'
+import { SingleLayout } from 'components_v2/SingleLayout'
+import { getAirtable } from 'services/airtable'
+import { CATEGORY, type SocialLinkProps } from 'types'
+import { getSocialLinks } from 'config/social'
+import { SocialLink } from 'components_v2/SocialLink'
 
 type Props = {
   socialLinks: SocialLinkProps[]

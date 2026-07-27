@@ -2,10 +2,10 @@ import type { NextPage } from 'next'
 import type { GetStaticProps } from 'next'
 import { BackgroundPhoto } from 'components/BackgroundPhoto'
 import { getAirtable } from 'services/airtable'
-import { SingleLayout } from '../components_v2/SingleLayout'
-import { getSocialLinks } from '../config/social'
-import { CATEGORY, type SocialLinkProps } from '../types'
-import { SocialLink } from '../components_v2/SocialLink'
+import { SingleLayout } from 'components_v2/SingleLayout'
+import { getSocialLinks } from 'config/social'
+import { CATEGORY, type SocialLinkProps } from 'types'
+import { SocialLink } from 'components_v2/SocialLink'
 
 type Props = {
   bio: string
