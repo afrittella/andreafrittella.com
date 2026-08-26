@@ -13,7 +13,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@googleapis/youtube": "^31.0.0",
+    "@googleapis/youtube": "^34.0.0",
     "@headlessui/react": "^2.2.10",
     "@vercel/speed-insights": "^2.0.0",
     "airtable": "^0.12.2",
